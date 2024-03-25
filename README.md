@@ -45,14 +45,31 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView 
 Set-PSReadLineOption -EditMode Windows 
 
-function lk() {cd $(walk --icons $args)}
 
 # replace 'Ctrl+t' and 'Ctrl+r' with your preferred bindings:
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
-  
+
 # Utility Command that tells you where the absolute path of commandlets are 
 function which ($command) { 
  Get-Command -Name $command -ErrorAction SilentlyContinue | 
  Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue 
 } 
+
+# ----------------------------------------Functions ----------------------------------------------
+
+# move in selected directory using walk
+function lk() {cd $(walk --icons $args)}
+
+# list json files in a folder
+function Get-JsonFileList {
+    param(
+        [Parameter(Mandatory=$false)]
+        [string]$Path = "."
+    )
+
+    Get-ChildItem -Path $Path -Filter "*.json" | ForEach-Object {
+        $_.BaseName >> json_file_list.txt
+    }
+}
+
 ````
