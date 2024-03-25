@@ -31,6 +31,12 @@ oh-my-posh init pwsh --config ""$env:POSH_THEMES_PATH\kushal.omp.json" | Invoke-
 ```powershell
 winget install --id=antonmedv.walk  -e
 ````
+
+## Install tldr-pages
+```powershell
+winget install tldr
+````
+
 ## Edit Your Profile to Look Like This
 ```powershell
 # Initialize Oh My Posh with the theme which we chosen
