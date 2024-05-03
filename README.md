@@ -1,6 +1,6 @@
 # PowerShell Configuration
 
-This guide will help you configure PowerShell inspired by [this blog post](https://hamidmosalla.com/2022/12/26/how-to-customize-windows-terminal-and-powershell-using-fzf-neovim-and-beautify-it-with-oh-my-posh/).
+> This guide will help you configure PowerShell inspired by [this blog post](https://hamidmosalla.com/2022/12/26/how-to-customize-windows-terminal-and-powershell-using-fzf-neovim-and-beautify-it-with-oh-my-posh/).
 ## Install Zoxide
 ```powershell
 winget install ajeetdsouza.zoxide
@@ -19,7 +19,7 @@ oh-my-posh font install
 
 ## edit powershell profile to use oh-my-posh
 ```powershell
-notepad $PROFILE
+code $PROFILE
 ````
 
 ## Initialize Oh My Posh with the theme which we chosen
