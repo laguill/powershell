@@ -110,7 +110,7 @@
     {
       "type": "prompt",
       "newline": true,
-      "alignment": "right",
+      "alignment": "left",
       "segments": [
         {
           "type": "session",
