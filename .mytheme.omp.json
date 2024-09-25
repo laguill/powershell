@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
-  "console_title_template": "{{ if .Root }}root @ {{ end }} {{ if .SSHSession }} {{ end }} {{ .Shell }} in {{ .Folder }}",
+  "console_title_template": "{{ if .Root }}root @ {{ end }} {{ if .SSHSession }}ssh@{{.HostName}} {{ end }} {{ .Shell }} in {{ .Folder }}",
   "auto_upgrade": true,
   "blocks": [
     {
@@ -104,15 +104,22 @@
           },
           "background": "#1BD4CD",
           "foreground": "#011627"
-        },
+        } 
+      ]
+    },
+    {
+      "type": "prompt",
+      "newline": true,
+      "alignment": "right",
+      "segments": [
         {
           "type": "session",
           "style": "diamond",
           "foreground": "#ffffff",
           "background": "#c386f1",
-          "leading_diamond": "",
+          "leading_diamond": "\ue0b2",
           "trailing_diamond": "",
-          "template": "{{ if .SSHSession }} {{ end }}{{ .UserName }}"
+          "template": "{{ if .SSHSession }} {{ .HostName }}{{ end }}"
         }
       ]
     },
