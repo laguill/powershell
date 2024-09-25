@@ -120,7 +120,7 @@
             "background": "#c386f1",
             "leading_diamond": "\ue0b2",
             "trailing_diamond": "",
-            "template": "{{ if .SSHSession }} {{ .HostName }}{{ end }}"
+            "template": "{{ if .SSHSession }}\ueba9 {{ .HostName }}{{ end }}"
           }
         ]
       },
