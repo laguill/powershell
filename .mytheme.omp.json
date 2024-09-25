@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
   "console_title_style": "template",
-  "console_title_template": "{{ if .Root }}root @ {{ end }} {{ .Shell }} - {{.UserName}}@{{.HostName}} in {{ .Folder }}",
+  "console_title_template": "{{.Shell}} in {{ .Folder }} - {{ if .Root }}root @ {{ end }} - {{ if .Segments.Session.SSHSession }}{{.UserName}}@{{.HostName}} ",
   "auto_upgrade": true,
   "blocks": [
     {
