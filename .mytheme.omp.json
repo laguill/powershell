@@ -64,6 +64,7 @@
             "powerline_symbol": "\ue0b0",
             "template": " \ue73c {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }} ",
             "properties": {
+              "home_enabled": "true",
               "display_mode": "context"
             },
             "background": "#FFDE57",
