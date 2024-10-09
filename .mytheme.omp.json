@@ -4,6 +4,13 @@
     "console_title_style": "template",
     "console_title_template": "{{.Shell}} - {{ if .Root }}root {{end}} {{if .Segments.Session.SSHSession }}{{.UserName}}@{{.HostName}} {{end}} in {{ .Folder}}",
     "auto_upgrade": true,
+    "palette": {
+        "os": "#ACB0BE",
+        "closer": "p:os",
+        "pink": "#F5C2E7",
+        "lavender": "#B4BEFE",
+        "blue":  "#89B4FA"
+     },
     "blocks": [
       {
         "type": "prompt",
