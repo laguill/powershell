@@ -2,7 +2,6 @@
 version = 4
 console_title_template = "{{ if .Root }}root @ {{ end }}{{ .Shell }} in {{ .Folder }}"
 patch_pwsh_bleed = true
-async = true
 
 [[blocks]]
 type = "prompt"
@@ -42,10 +41,10 @@ alignment = "left"
   [[blocks.segments]]
   type = "session"
   style = "powerline"
-  powerline_symbol = ""
-  template = "  {{ .UserName }}@{{ .HostName }} "
   foreground = "#ffffff"
   background = "#ff2eee"
+  template = "  {{ .UserName }}@{{ .HostName }} "
+  powerline_symbol = ""
 
     [blocks.segments.options]
     ssh_icon = "📡"

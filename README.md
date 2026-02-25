@@ -137,6 +137,8 @@ function TestsAutos { Set-Location "$HOME\source\repos\TestsAutos" }
 
 ---
 
+See [ohmyposh Configurator](https://jamesmontemagno.github.io/ohmyposh-configurator/) to edit your theme.
+
 ## Result
 
 Once configured, your terminal will feature:

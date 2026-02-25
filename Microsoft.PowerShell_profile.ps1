@@ -1,7 +1,9 @@
 # ── Prompt ────────────────────────────────────────────────────────────────────
 
 # Initialize Oh My Posh with a custom theme
-oh-my-posh init pwsh --config ~/.config/ohmyposh/config.omp.toml | Invoke-Expression
+oh-my-posh init pwsh --config "C:\Users\g.lafon\.config\ohmyposh\config.omp.toml" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/jandedobbeleer.omp.json" | Invoke-Expression
+$env:POSH_GIT_ENABLED = $true
 
 # ── PSReadLine ────────────────────────────────────────────────────────────────
 
@@ -11,14 +13,13 @@ Import-Module PSReadLine
 # Show a navigable menu of all options when pressing Tab
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
-# Navigate history with arrow keys, matching the current input
+# # Navigate history with arrow keys, matching the current input
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 Set-PSReadLineKeyHandler -Key UpArrow   -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
-# Inline suggestions and tooltips
+# # Inline suggestions and tooltips
 Set-PSReadLineOption -ShowToolTips
-Set-PSReadLineOption -PredictionSource History
 
 # ── PSFzf ─────────────────────────────────────────────────────────────────────
 
