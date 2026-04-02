@@ -149,6 +149,33 @@ type = "prompt"
 alignment = "right"
 
   [[blocks.segments]]
+  type = "claude"
+  style = "diamond"
+  foreground = "#011627"
+  background = "#81C8BE"
+  leading_diamond = "\ue0b6"
+  trailing_diamond = "\ue0b4"
+  template = " {{ if contains \"opus\" .Model.ID }}\uf219{{ else if contains \"haiku\" .Model.ID }}\uf0e7{{ else }}\U000F04A9{{ end }} {{ .Model.DisplayName }} \ue0b3 {{ .TokenUsagePercent.Gauge }} {{ .TokenUsagePercent.String }}% "
+  background_templates = [
+    "{{ if gt .TokenUsagePercent 80.0 }}#E78284{{ end }}",
+    "{{ if gt .TokenUsagePercent 50.0 }}#E5C890{{ end }}"
+  ]
+
+  [[blocks.segments]]
+  type = "claude"
+  style = "diamond"
+  foreground = "#C6D0F5"
+  background = "#626880"
+  leading_diamond = "\ue0b6"
+  trailing_diamond = "\ue0b4"
+  template = "{{ if gt .Cost.TotalCostUSD 0.0 }} \uf0d6 {{ .FormattedCost }} {{ end }}"
+  foreground_templates = [ "{{ if gt .Cost.TotalCostUSD 0.5 }}#011627{{ end }}" ]
+  background_templates = [
+    "{{ if gt .Cost.TotalCostUSD 1.0 }}#E78284{{ end }}",
+    "{{ if gt .Cost.TotalCostUSD 0.5 }}#EF9F76{{ end }}"
+  ]
+
+  [[blocks.segments]]
   type = "status"
   style = "diamond"
   foreground = "#414141"
